@@ -2,10 +2,11 @@
 form {
     max-width: 500px;
     margin: 0 auto;
+    padding: 150px;
 }
 
 .form {
-    background: #11270B;
+    background: #FF5EDF;
     max-width: 400px;
     margin: 0 auto;
 }
@@ -102,7 +103,7 @@ button {
     display: block;
     appearance: none;
     margin-top: 40px;
-    border: 1px solid #333;
+    border: 1px solid #333333;
     margin-bottom: 20px;
     text-transform: uppercase;
     padding: 10px 20px;

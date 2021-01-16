@@ -1,5 +1,8 @@
 body {
-    background: #11270B;
+    margin: 0;
+    padding: 0;
+    font-family: "Courier New", "courier", "monospace";
+    background: linear-gradient(89deg, #662E9B 0%, #04C8DE 100%);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,7 +13,7 @@ h1 {
     color: white;
     text-align: center;
     padding-bottom: 10px;
-    border-bottom: #3C5A14;
+    border-bottom: #FF5EDF;
 }
 
 

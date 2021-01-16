@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import './RegistrationForm.css';
+import '../Form.css';
 
 export default function RegistrationForm () {
     const { register, errors, handleSubmit } = useForm();

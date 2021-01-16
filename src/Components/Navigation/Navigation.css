@@ -1,0 +1,23 @@
+ul {
+    height: 100px;
+    width: 100px;
+    list-style-type: none;
+    margin: 0;
+    padding: 20px 10px 10px 10px;
+    overflow: hidden;
+    background-color: transparent ;
+    border-radius: 4px;
+
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 1px 1px;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: hotpink;
+}
