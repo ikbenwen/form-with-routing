@@ -1,21 +1,7 @@
-body {
-    background: #11270B;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-}
 
 form {
     max-width: 500px;
     margin: 0 auto;
-}
-
-h1 {
-    font-weight: 100;
-    color: white;
-    text-align: center;
-    padding-bottom: 10px;
-    border-bottom: #3C5A14;
 }
 
 .form {
@@ -96,10 +82,6 @@ input[type="submit"] {
     -webkit-appearance: none;
 }
 
-.App {
-    max-width: 600px;
-    margin: 0 auto;
-}
 
 button[type="button"] {
     display: block;
