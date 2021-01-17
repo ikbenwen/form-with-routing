@@ -3,11 +3,17 @@ import { useForm } from "react-hook-form";
 import '../Form.css';
 
 export default function RegistrationForm () {
-    const { register, errors, handleSubmit } = useForm();
+    const { register,reset ,errors, handleSubmit } = useForm();
 
-    function onSubmit(data){
+    // function onSubmit(data){
+    //     console.log(data)
+    // }
+
+    const onSubmit = (data, e) => {
+        e.target.reset()
         console.log(data)
-    }
+        // reset after form submit
+    };
 
 return (
     <form className="registrationForm" onSubmit={handleSubmit(onSubmit)}>

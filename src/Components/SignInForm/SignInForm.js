@@ -5,9 +5,10 @@ import { useForm } from "react-hook-form";
 export default function SignInForm () {
     const { register, errors, handleSubmit } = useForm();
 
-    function onSubmit(data){
+    const onSubmit = (data, e) => {
+        e.target.reset()
         console.log(data)
-    }
+    };
 
     return (
         <form className="registrationForm" onSubmit={handleSubmit(onSubmit)}>
