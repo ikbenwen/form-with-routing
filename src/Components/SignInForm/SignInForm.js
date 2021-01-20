@@ -1,14 +1,47 @@
-import React from "react";
-import { useForm } from "react-hook-form";
+import React, {useState, useContext, useEffect} from "react";
+import { useHistory} from 'react-router-dom';
+import {useForm} from "react-hook-form";
+import axios from "axios";
+import {AuthContext, useAuthState} from "../../context/AuthContext";
+
+// const endpointLink = 'https://polar-lake-14365.herokuapp.com//api/auth/signin'
+
+export default function SignInForm() {
+    const {register, errors, handleSubmit} = useForm();
+
+    // const onSubmit = (data, e) => {
+    //     e.target.reset()
+    //     console.log(data)
+    // };
+
+    // function SignIn() {
+
+    const { login } = useContext(AuthContext);
+    const { isAuthenticated } = useAuthState();
 
 
-export default function SignInForm () {
-    const { register, errors, handleSubmit } = useForm();
+    const history = useHistory();
 
-    const onSubmit = (data, e) => {
-        e.target.reset()
-        console.log(data)
-    };
+    useEffect(() => {
+        if (isAuthenticated === true) {
+            history.push('/profile');
+        }
+    }, [isAuthenticated]);
+
+    async function onSubmit(data) {
+        console.log(data);
+
+        try {
+            const response = await axios.post('https://polar-lake-14365.herokuapp.com//api/auth/signin', {
+                username,
+                password,
+            })
+
+            login(response.data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
 
     return (
         <form className="registrationForm" onSubmit={handleSubmit(onSubmit)}>
@@ -21,7 +54,7 @@ export default function SignInForm () {
                         type="text"
                         name="username"
                         id="details-name"
-                        ref={register({ required: true })}
+                        ref={register({required: true})}
                     />
                 </label>
                 {errors.username && <p>Dit veld is verplicht</p>}
@@ -32,13 +65,14 @@ export default function SignInForm () {
                         type="password"
                         name="password"
                         id="details-password"
-                        ref={register({ required: true })}
+                        ref={register({required: true})}
                     />
                 </label>
                 {errors.password && <p>Dit veld is verplicht</p>}
 
             </fieldset>
-            <button type="submit" >submit</button>
+            <button type="submit">submit</button>
         </form>
-    )
+
+    );
 }
