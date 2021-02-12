@@ -3,6 +3,7 @@ import { useHistory} from 'react-router-dom';
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import {AuthContext, useAuthState} from "../../context/AuthContext";
+import "../Styles/Form.css"
 
 // const endpointLink = 'https://polar-lake-14365.herokuapp.com//api/auth/signin'
 
@@ -19,6 +20,8 @@ export default function SignInForm() {
     const { login } = useContext(AuthContext);
     const { isAuthenticated } = useAuthState();
 
+    const {username, setUsername} = useState('');
+    const {password, setPassword} = useState('');
 
     const history = useHistory();
 
